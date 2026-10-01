@@ -1,4 +1,4 @@
-const CACHE_NAME = "lam-electrotech-static-v9";
+const CACHE_NAME = "lam-electrotech-static-v10";
 const APP_FILES = [
   "./",
   "./index.html",
@@ -17,7 +17,8 @@ const APP_FILES = [
   "./styles.css",
   "./script.js",
   "./favicon.svg",
-  "./pwa-icon.svg",
+  "./logo-horizontal.png",
+  "./logo-icon.png",
   "./manifest.webmanifest",
   "./robots.txt"
 ];

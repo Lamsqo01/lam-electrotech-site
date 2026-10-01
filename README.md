@@ -18,7 +18,7 @@ Site statique en français pour présenter les services de LAM ELECTROTECH et or
 
 Les fichiers peuvent être prévisualisés directement depuis `index.html`. Pour tester l’installation de l’application et le cache hors connexion, servir le dossier depuis `localhost` ou un hébergement en HTTPS : les navigateurs n’autorisent pas les service workers depuis une URL `file://`.
 
-Publier ensemble les pages HTML, `styles.css`, `script.js`, `manifest.webmanifest`, `service-worker.js`, les icônes SVG, `contact.vcf` et `robots.txt`. Configurer également `404.html` comme page d’erreur chez l’hébergeur. Le service worker précharge les pages et ressources locales, privilégie la version réseau pour les navigations en ligne et propose une page de repli lorsque le réseau est absent.
+Publier ensemble les pages HTML, `styles.css`, `script.js`, `manifest.webmanifest`, `service-worker.js`, l’image source `logo.jpeg`, ses versions optimisées `logo-horizontal.png` et `logo-icon.png`, `contact.vcf` et `robots.txt`. Configurer également `404.html` comme page d’erreur chez l’hébergeur. Le service worker précharge les pages et ressources locales, notamment les logos, privilégie la version réseau pour les navigations en ligne et propose une page de repli lorsque le réseau est absent.
 
 ## Parcours de contact
 
@@ -37,7 +37,7 @@ L’assistant de préparation est guidé par des choix et des questions définis
 
 ## À compléter et prochaines améliorations
 
-- Remplacer le symbole provisoire par le logo officiel.
+- Le logo officiel fourni (`logo.jpeg`) est utilisé sur les pages et décliné en formats optimisés pour l’affichage (`logo-horizontal.png`) et les icônes du site et de l’application (`logo-icon.png`).
 - Ajouter les photos réelles des interventions, avec les autorisations nécessaires.
 - Compléter l’identification de l’éditeur et de l’hébergeur dans `mentions-legales.html` avec les informations exactes de l’entreprise.
 - Choisir le domaine et configurer son DNS, HTTPS, l’URL canonique, l’image de partage social, un sitemap adapté au domaine et la propriété du site dans les outils de référencement.
