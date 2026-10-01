@@ -26,6 +26,15 @@ Les formulaires ne transmettent pas les réponses à un serveur. Ils préparent 
 
 L’assistant de préparation est guidé par des choix et des questions définis sur le site. Il ne s’agit pas d’un modèle d’IA générative, d’un diagnostic à distance ou d’un système de prise de rendez-vous.
 
+## Sécurité et publication
+
+- Le site est statique : il ne contient ni compte d’administration, ni API, ni stockage serveur des formulaires. Les demandes ne sont transmises qu’au service WhatsApp si le visiteur choisit d’envoyer son message.
+- Les pages HTML définissent une politique CSP restrictive avec `default-src 'self'`, bloquent les objets et cadres intégrés, limitent les formulaires à la même origine et demandent la mise à niveau des ressources HTTP. La politique est placée en méta HTML car GitHub Pages ne permet pas de configurer des en-têtes HTTP personnalisés depuis les fichiers du dépôt. Cette forme de CSP ne peut pas appliquer `frame-ancestors` ; les en-têtes HSTS et autres en-têtes de transport dépendent de l’hébergeur.
+- L’hébergement public ne peut pas empêcher les visiteurs de lire ou copier les fichiers du site. La sécurité de publication dépend aussi de la protection du compte GitHub et de l’accès au dépôt.
+- Activer l’authentification à deux facteurs ou une passkey sur GitHub, ne jamais publier de mot de passe, jeton ou clé privée, vérifier chaque changement avant publication, limiter les collaborateurs, empêcher la suppression et les force-push sur `main`, et garder une copie indépendante des fichiers.
+- GitHub Pages sert ici de site public. Ne pas y déposer des renseignements personnels, documents clients, secrets commerciaux ou fichiers internes.
+- Une protection côté navigateur ne rend pas un site « impossible à pirater » et ne remplace pas les protections de compte, l’hygiène des mises à jour ni la configuration de l’hébergeur.
+
 ## À finaliser avant publication
 
 - Remplacer le symbole provisoire par le logo officiel.

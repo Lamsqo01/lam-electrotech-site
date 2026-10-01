@@ -1,4 +1,4 @@
-const CACHE_NAME = "lam-electrotech-static-v7";
+const CACHE_NAME = "lam-electrotech-static-v8";
 const APP_FILES = [
   "./",
   "./index.html",
