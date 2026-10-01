@@ -89,7 +89,7 @@ self.addEventListener("fetch", (event) => {
   event.respondWith((async () => {
     if (request.mode === "navigate") {
       const response = await refreshedResponse;
-      if (response?.ok) return response;
+      if (response && response.ok) return response;
 
       const cached = await cachedResponse;
       if (cached) return cached;
@@ -103,10 +103,6 @@ self.addEventListener("fetch", (event) => {
 
     const response = await refreshedResponse;
     if (response) return response;
-
-    if (request.mode === "navigate") {
-      return (await caches.match("./offline.html")) || Response.error();
-    }
 
     return new Response("Contenu indisponible hors connexion.", {
       status: 503,
