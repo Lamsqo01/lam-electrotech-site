@@ -1,4 +1,4 @@
-const CACHE_NAME = "lam-electrotech-static-v8";
+const CACHE_NAME = "lam-electrotech-static-v9";
 const APP_FILES = [
   "./",
   "./index.html",
@@ -87,6 +87,17 @@ self.addEventListener("fetch", (event) => {
   const refreshedResponse = refreshCache(request);
   event.waitUntil(refreshedResponse.then(() => undefined));
   event.respondWith((async () => {
+    if (request.mode === "navigate") {
+      const response = await refreshedResponse;
+      if (response?.ok) return response;
+
+      const cached = await cachedResponse;
+      if (cached) return cached;
+      if (response) return response;
+
+      return (await caches.match("./offline.html")) || Response.error();
+    }
+
     const cached = await cachedResponse;
     if (cached) return cached;
 

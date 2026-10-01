@@ -9,7 +9,7 @@ Site statique en français pour présenter les services de LAM ELECTROTECH et or
 - `normes-securite.html` : repères de prévention, signaux de danger, erreurs à éviter, précautions par domaine et liens vers les sources officielles béninoises et les référentiels IEC cités. Les liens distinguent l’existence d’un texte de son applicabilité à un projet ; les exigences réglementaires doivent être confirmées auprès des organismes compétents au Bénin.
 - `depannage.html` : parcours séparé de signalement d’une panne.
 - `politique-confidentialite.html` : fonctionnement actuel des échanges et données.
-- `mentions-legales.html` : mentions préparées, à compléter avec l’identité juridique et l’hébergeur réels.
+- `mentions-legales.html` : mentions préparées, à compléter avec l’identité juridique de l’éditeur ; le site est hébergé par GitHub Pages.
 - `offline.html` : page de repli en cas de navigation hors connexion.
 - `404.html` : page d’erreur à configurer comme page 404 auprès de l’hébergeur.
 - `robots.txt` : autorise l’indexation des pages publiques et exclut la page hors connexion.
@@ -18,7 +18,7 @@ Site statique en français pour présenter les services de LAM ELECTROTECH et or
 
 Les fichiers peuvent être prévisualisés directement depuis `index.html`. Pour tester l’installation de l’application et le cache hors connexion, servir le dossier depuis `localhost` ou un hébergement en HTTPS : les navigateurs n’autorisent pas les service workers depuis une URL `file://`.
 
-Publier ensemble les pages HTML, `styles.css`, `script.js`, `manifest.webmanifest`, `service-worker.js`, les icônes SVG, `contact.vcf` et `robots.txt`. Configurer également `404.html` comme page d’erreur chez l’hébergeur. Le service worker précharge les pages et ressources locales et propose une page de repli lorsque le réseau est absent.
+Publier ensemble les pages HTML, `styles.css`, `script.js`, `manifest.webmanifest`, `service-worker.js`, les icônes SVG, `contact.vcf` et `robots.txt`. Configurer également `404.html` comme page d’erreur chez l’hébergeur. Le service worker précharge les pages et ressources locales, privilégie la version réseau pour les navigations en ligne et propose une page de repli lorsque le réseau est absent.
 
 ## Parcours de contact
 
@@ -35,7 +35,7 @@ L’assistant de préparation est guidé par des choix et des questions définis
 - GitHub Pages sert ici de site public. Ne pas y déposer des renseignements personnels, documents clients, secrets commerciaux ou fichiers internes.
 - Une protection côté navigateur ne rend pas un site « impossible à pirater » et ne remplace pas les protections de compte, l’hygiène des mises à jour ni la configuration de l’hébergeur.
 
-## À finaliser avant publication
+## À compléter et prochaines améliorations
 
 - Remplacer le symbole provisoire par le logo officiel.
 - Ajouter les photos réelles des interventions, avec les autorisations nécessaires.
