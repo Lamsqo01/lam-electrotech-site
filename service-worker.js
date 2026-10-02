@@ -1,4 +1,4 @@
-const CACHE_NAME = "lam-electrotech-static-v11";
+const CACHE_NAME = "lam-electrotech-static-v12";
 const APP_FILES = [
   "./",
   "./index.html",
@@ -13,8 +13,15 @@ const APP_FILES = [
   "./politique-confidentialite.html",
   "./offline.html",
   "./404.html",
+  "./realisations/electricite/cellule-electrique-technicien.jpg",
+  "./realisations/electricite/pupitre-cellules-electriques.jpg",
+  "./realisations/electricite/ensemble-cellules-electriques.jpg",
+  "./realisations/electricite/raccordements-transformateur.jpg",
+  "./realisations/electricite/technicien-devant-cellules.jpg",
+  "./realisations/electricite/transformateur-vue-ensemble.jpg",
+  "./realisations/electricite/acheminement-cables-transformateur.jpg",
   "./contact.vcf",
-  "./styles.css?v=11",
+  "./styles.css?v=12",
   "./script.js",
   "./favicon.svg",
   "./logo-horizontal.png",

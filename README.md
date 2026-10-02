@@ -5,7 +5,8 @@ Site statique en français pour présenter les services de LAM ELECTROTECH et or
 ## Pages
 
 - `index.html` : accueil, services, assistant de préparation, conseils, FAQ, devis et contact.
-- `electricite.html`, `videosurveillance.html`, `antennes.html`, `solaire.html`, `maintenance.html` : pages détaillées des prestations, avec bénéfices et limites à prendre en compte.
+- `electricite.html` : page détaillée de la prestation avec une galerie de sept photos de chantier et des légendes descriptives validées ; les clichés source sont optimisés pour le web dans `realisations/electricite/`. Les photos n’établissent pas, à elles seules, l’état ni la conformité d’une installation.
+- `videosurveillance.html`, `antennes.html`, `solaire.html`, `maintenance.html` : pages détaillées des prestations, avec bénéfices et limites à prendre en compte.
 - `normes-securite.html` : repères de prévention, signaux de danger, erreurs à éviter, précautions par domaine et liens vers les sources officielles béninoises et les référentiels IEC cités. Les liens distinguent l’existence d’un texte de son applicabilité à un projet ; les exigences réglementaires doivent être confirmées auprès des organismes compétents au Bénin.
 - `depannage.html` : parcours séparé de signalement d’une panne.
 - `politique-confidentialite.html` : fonctionnement actuel des échanges et données.
@@ -18,7 +19,7 @@ Site statique en français pour présenter les services de LAM ELECTROTECH et or
 
 Les fichiers peuvent être prévisualisés directement depuis `index.html`. Pour tester l’installation de l’application et le cache hors connexion, servir le dossier depuis `localhost` ou un hébergement en HTTPS : les navigateurs n’autorisent pas les service workers depuis une URL `file://`.
 
-Publier ensemble les pages HTML, `styles.css`, `script.js`, `manifest.webmanifest`, `service-worker.js`, l’image source `logo.jpeg`, ses versions optimisées `logo-horizontal.png` et `logo-icon.png`, `contact.vcf` et `robots.txt`. Configurer également `404.html` comme page d’erreur chez l’hébergeur. Le service worker précharge les pages et ressources locales, notamment les logos, privilégie la version réseau pour les navigations en ligne et propose une page de repli lorsque le réseau est absent.
+Publier ensemble les pages HTML, `styles.css`, `script.js`, `manifest.webmanifest`, `service-worker.js`, l’image source `logo.jpeg`, ses versions optimisées `logo-horizontal.png` et `logo-icon.png`, les photos présentes dans `realisations/electricite/`, `contact.vcf` et `robots.txt`. Configurer également `404.html` comme page d’erreur chez l’hébergeur. Le service worker précharge les pages et ressources locales, y compris les photos du portfolio, privilégie la version réseau pour les navigations en ligne et propose une page de repli lorsque le réseau est absent.
 
 ## Parcours de contact
 
@@ -38,7 +39,8 @@ L’assistant de préparation est guidé par des choix et des questions définis
 ## À compléter et prochaines améliorations
 
 - Le logo officiel fourni (`logo.jpeg`) est utilisé sur les pages et décliné en formats optimisés pour l’affichage (`logo-horizontal.png`) et les icônes du site et de l’application (`logo-icon.png`).
-- Ajouter les photos réelles des interventions, avec les autorisations nécessaires.
+- Les sept photos reçues dans `Img_elec/` ont été examinées ; avec confirmation des autorisations de publication des personnes, du site et des éléments tiers visibles, elles sont présentées comme des réalisations de LAM ELECTROTECH. Les fichiers publiés ont été redimensionnés, tournés à l’endroit si nécessaire et réencodés en JPEG sans métadonnées EXIF.
+- Ajouter les photos des autres services uniquement après examen du contenu, vérification des droits de publication et rédaction de légendes conformes aux détails réellement visibles.
 - Compléter l’identification de l’éditeur et de l’hébergeur dans `mentions-legales.html` avec les informations exactes de l’entreprise.
 - Choisir le domaine et configurer son DNS, HTTPS, l’URL canonique, l’image de partage social, un sitemap adapté au domaine et la propriété du site dans les outils de référencement.
 - Configurer les réponses d’hébergement pour les types de fichiers statiques et la page `404.html`.

@@ -458,6 +458,21 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .detail-process li::before { position: absolute; top: 13px; left: 0; content: counter(process, decimal-leading-zero); color: var(--blue); font-size: 9px; font-weight: 700; }
 .detail-process li b { font-family: var(--font-display); font-size: 11px; }
 .detail-process li small { color: var(--muted); font-size: 9px; line-height: 1.6; }
+.electrical-gallery-section { background: var(--paper); }
+.electrical-gallery-heading { max-width: 780px; margin-bottom: 33px; }
+.electrical-gallery-heading h2 { margin: 15px 0 11px; font-family: var(--font-display); font-size: clamp(32px,4vw,46px); font-weight: 600; line-height: 1.16; letter-spacing: -.05em; }
+.electrical-gallery-heading h2 em { color: var(--blue); font-style: normal; }
+.electrical-gallery-heading > p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.85; }
+.electrical-gallery-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); align-items: start; gap: 17px; }
+.electrical-photo-card { min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); background: #fff; }
+.electrical-photo-link { display: block; overflow: hidden; aspect-ratio: 4 / 3; background: #e9edf1; }
+.electrical-photo-link img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .3s var(--ease); }
+.electrical-photo-link:hover img { transform: scale(1.035); }
+.electrical-photo-card figcaption { padding: 16px 17px 17px; }
+.electrical-photo-card figcaption > span { display: block; margin-bottom: 8px; color: var(--blue); font-size: 8px; font-weight: 800; letter-spacing: .12em; }
+.electrical-photo-card figcaption > b { display: block; color: var(--ink); font-family: var(--font-display); font-size: 14px; line-height: 1.4; }
+.electrical-photo-card figcaption > p { min-height: 52px; margin: 7px 0 12px; color: var(--muted); font-size: 10px; line-height: 1.7; }
+.electrical-photo-card figcaption > small { color: #586678; font-size: 9px; font-weight: 700; }
 .detail-cta { padding: 47px 0; color: #fff; background: var(--navy-soft); }
 .detail-cta > .container { display: flex; justify-content: space-between; align-items: center; gap: 25px; }
 .detail-cta h2 { margin: 10px 0 4px; font-family: var(--font-display); font-size: clamp(23px,3vw,33px); font-weight: 600; letter-spacing: -.04em; }
@@ -647,6 +662,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .footer-contact > a { display: inline-block; margin-right: 16px; }
   .detail-hero-grid { gap: 6%; }
   .detail-content-grid { gap: 5%; }
+  .electrical-gallery-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
 @media (max-width: 600px) {
   html { scroll-padding-top: 72px; }
@@ -781,6 +797,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .detail-aside { gap: 8px; padding: 18px; }
   .detail-aside strong { font-size: 17px; }
   .detail-content-grid { grid-template-columns: 1fr; gap: 25px; }
+  .electrical-gallery-grid { grid-template-columns: 1fr; gap: 14px; }
+  .electrical-gallery-heading { margin-bottom: 25px; }
+  .electrical-photo-card figcaption > p { min-height: 0; }
   .detail-main-copy h2 { font-size: 34px; }
   .detail-service-grid article { min-height: 145px; padding: 13px; }
   .detail-process { padding: 19px; }
