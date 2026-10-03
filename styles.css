@@ -473,6 +473,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .electrical-photo-card figcaption > b { display: block; color: var(--ink); font-family: var(--font-display); font-size: 14px; line-height: 1.4; }
 .electrical-photo-card figcaption > p { min-height: 52px; margin: 7px 0 12px; color: var(--muted); font-size: 10px; line-height: 1.7; }
 .electrical-photo-card figcaption > small { color: #586678; font-size: 9px; font-weight: 700; }
+.electrical-gallery-additions { margin-top: 58px; padding-top: 42px; border-top: 1px solid var(--line); }
+.electrical-gallery-group + .electrical-gallery-group { margin-top: 39px; }
+.electrical-gallery-group h3 { margin: 0 0 17px; color: var(--ink); font-family: var(--font-display); font-size: clamp(20px,2.4vw,28px); font-weight: 600; line-height: 1.25; letter-spacing: -.035em; }
+.electrical-gallery-note { margin: 36px 0 0; padding: 17px 19px; border-left: 3px solid #d19a32; background: #fff7e6; color: #533e1c; font-size: 11px; line-height: 1.8; }
 .detail-cta { padding: 47px 0; color: #fff; background: var(--navy-soft); }
 .detail-cta > .container { display: flex; justify-content: space-between; align-items: center; gap: 25px; }
 .detail-cta h2 { margin: 10px 0 4px; font-family: var(--font-display); font-size: clamp(23px,3vw,33px); font-weight: 600; letter-spacing: -.04em; }
