@@ -10,6 +10,9 @@
   --ink: #172235;
   --muted: #6f7784;
   --line: #e4e4df;
+  --radius-control: 6px;
+  --radius-card: 10px;
+  --radius-panel: 14px;
   --font-body: "Segoe UI", "Aptos", Arial, sans-serif;
   --font-display: "Segoe UI", "Aptos Display", Arial, sans-serif;
   --container: 1200px;
@@ -818,6 +821,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .footer-bottom > span:nth-child(2) { display: none; }
   .mobile-quickbar { position: fixed; z-index: 55; right: 0; bottom: 0; left: 0; min-height: 62px; display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 6px max(12px, env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); border-top: 1px solid rgba(16,27,45,.1); background: rgba(255,255,255,.97); box-shadow: 0 -6px 22px rgba(16,27,45,.08); backdrop-filter: blur(12px); }
   .mobile-quickbar a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: #49515e; font-size: 9px; font-weight: 700; }
+
   .mobile-quickbar .icon { width: 18px; height: 18px; color: var(--blue); }
   .mobile-quickbar .quickbar-main { color: var(--navy); }
   .mobile-quickbar .quickbar-main .icon { color: var(--navy); }
@@ -831,3 +835,24 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+.nav-cta, .button, .menu-toggle { border-radius: var(--radius-control); }
+.hero-visual, .work-empty, .assistant-panel, .request-panel, .detail-aside, .detail-process,
+.repair-form-wrap, .repair-page-form, .standards-references, .standards-list, .checklist-columns,
+.electrical-photo-card, .electrical-gallery-note, .safety-bottom-cta, .detail-service-grid,
+.service-value-card, .emergency-layout, .safety-domain-grid, .standards-panel, .mistake-grid {
+  border-radius: var(--radius-card);
+}
+.hero-visual, .work-empty, .assistant-panel, .request-panel, .repair-form-wrap, .repair-page-form {
+  border-radius: var(--radius-panel);
+}
+.service-icon, .assistant-avatar, .art-label, .guide-search-wrap, .faq-search-wrap,
+.guide-filters button, .assistant-choices button, .guide-answer summary > span,
+.guide-card, .insight-card, .faq-list details, .emergency-symbol, .repair-warning,
+.detail-actions .button {
+  border-radius: var(--radius-control);
+}
+.guide-search-wrap input, .faq-search, #quote-form input:not([type="radio"]),
+#quote-form select, #quote-form textarea, .repair-form input, .repair-form select,
+.repair-form textarea { border-radius: var(--radius-control); }
+.services-grid { border-radius: var(--radius-card); }
