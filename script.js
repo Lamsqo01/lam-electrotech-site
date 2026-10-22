@@ -2,30 +2,69 @@ document.documentElement.classList.remove("no-js");
 
 const menuButton = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector("#main-nav");
+const menuBackdrop = document.createElement("div");
+menuBackdrop.className = "nav-backdrop";
+menuBackdrop.setAttribute("aria-hidden", "true");
+menuBackdrop.hidden = true;
+if (menuButton && mainNav) menuButton.closest(".site-header").after(menuBackdrop);
 
-function closeMenu() {
+function closeMenu(restoreFocus = false) {
   if (!menuButton || !mainNav) return;
   menuButton.setAttribute("aria-expanded", "false");
   menuButton.setAttribute("aria-label", "Ouvrir le menu");
   mainNav.classList.remove("is-open");
   document.body.classList.remove("menu-open");
+  menuBackdrop.classList.remove("is-visible");
+  window.setTimeout(() => {
+    if (!menuBackdrop.classList.contains("is-visible")) menuBackdrop.hidden = true;
+  }, 250);
+  if (restoreFocus) menuButton.focus();
 }
 
 if (menuButton && mainNav) {
   menuButton.addEventListener("click", () => {
     const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", String(!isOpen));
-    menuButton.setAttribute("aria-label", isOpen ? "Ouvrir le menu" : "Fermer le menu");
-    mainNav.classList.toggle("is-open", !isOpen);
-    document.body.classList.toggle("menu-open", !isOpen);
+    if (isOpen) {
+      closeMenu();
+      return;
+    }
+
+    menuButton.setAttribute("aria-expanded", "true");
+    menuButton.setAttribute("aria-label", "Fermer le menu");
+    mainNav.classList.add("is-open");
+    document.body.classList.add("menu-open");
+    menuBackdrop.hidden = false;
+    requestAnimationFrame(() => menuBackdrop.classList.add("is-visible"));
+    window.setTimeout(() => {
+      if (menuButton.getAttribute("aria-expanded") === "true") {
+        mainNav.querySelector("a")?.focus();
+      }
+    }, 50);
   });
 
   mainNav.addEventListener("click", (event) => {
     if (event.target.closest("a")) closeMenu();
   });
 
+  menuBackdrop.addEventListener("click", () => closeMenu(true));
+  document.addEventListener("focusin", (event) => {
+    if (
+      menuButton.getAttribute("aria-expanded") === "true"
+      && !mainNav.contains(event.target)
+      && event.target !== menuButton
+    ) {
+      closeMenu();
+    }
+  });
+
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
+    if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
+      closeMenu(true);
+    }
+  });
+
+  window.matchMedia("(min-width: 821px)").addEventListener("change", (event) => {
+    if (event.matches) closeMenu();
   });
 }
 
