@@ -1,4 +1,4 @@
-const CACHE_NAME = "lam-electrotech-static-v17";
+const CACHE_NAME = "lam-electrotech-static-v18";
 const APP_FILES = [
   "./",
   "./index.html",
@@ -37,7 +37,7 @@ const APP_FILES = [
   "./gaines-electriques-en-attente-dans-la-piece-vue-02.jpg",
   "./disjoncteur-schneider-et-cables-de-puissance.jpg",
   "./contact.vcf",
-  "./styles.css?v=16",
+  "./styles.css?v=17",
   "./script.js",
   "./favicon.svg",
   "./logo-horizontal.png",
