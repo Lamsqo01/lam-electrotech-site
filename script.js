@@ -1,5 +1,3 @@
-document.documentElement.classList.remove("no-js");
-
 const menuButton = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector("#main-nav");
 const menuBackdrop = document.createElement("div");
@@ -82,6 +80,7 @@ if (quoteForm) {
       `Service : ${formData.get("service")}`,
       `Besoin : ${formData.get("message").toString().trim()}`,
       formData.get("name")?.toString().trim() ? `Nom : ${formData.get("name").toString().trim()}` : "",
+      formData.get("phone")?.toString().trim() ? `Téléphone : ${formData.get("phone").toString().trim()}` : "",
       formData.get("location")?.toString().trim() ? `Commune : ${formData.get("location").toString().trim()}` : "",
       formData.get("building")?.toString().trim() ? `Type de bâtiment : ${formData.get("building").toString().trim()}` : "",
       "",
@@ -112,6 +111,8 @@ if (repairForm) {
       "",
       `Problème : ${formData.get("problem")}`,
       `Description : ${formData.get("message").toString().trim()}`,
+      formData.get("name")?.toString().trim() ? `Nom : ${formData.get("name").toString().trim()}` : "",
+      formData.get("phone")?.toString().trim() ? `Téléphone : ${formData.get("phone").toString().trim()}` : "",
       formData.get("location")?.toString().trim() ? `Commune : ${formData.get("location").toString().trim()}` : "",
       "",
       "Je peux ajouter une photo dans cette conversation."
@@ -148,10 +149,12 @@ const serviceSelect = document.querySelector('#quote-form select[name="service"]
 const requestedService = new URLSearchParams(window.location.search).get("service");
 const serviceFromLink = {
   electricite: "Électricité bâtiment",
+  industriel: "Électricité industrielle / automatisme",
   videosurveillance: "Vidéosurveillance",
   antennes: "Antennes paraboliques / réception TV",
   solaire: "Panneaux photovoltaïques",
   maintenance: "Maintenance technique",
+  "contrat-maintenance": "Contrat / suivi périodique de maintenance",
   depannage: "Dépannage"
 }[requestedService];
 if (serviceSelect && serviceFromLink) {
@@ -252,6 +255,7 @@ if (assistantTranscript && assistantChoices && assistantInputForm && assistantIn
     } else {
       const prompts = {
         "Électricité bâtiment": "Nous allons préparer les informations utiles pour une demande en électricité bâtiment.",
+        "Électricité industrielle / automatisme": "Décrivez le site, les équipements concernés et le besoin en électricité industrielle ou en automatisme. La faisabilité sera étudiée avec LAM ELECTROTECH.",
         "Vidéosurveillance": "Pour orienter la demande, indiquez le type de bâtiment et les espaces à protéger.",
         "Antennes paraboliques / réception TV": "Pour orienter la demande, nous noterons le type de bâtiment et l’état de la réception.",
         "Panneaux photovoltaïques": "Une étude solaire dépend des usages réels. Aucun dimensionnement automatique ne sera déduit de ces réponses.",
@@ -324,6 +328,7 @@ if (assistantTranscript && assistantChoices && assistantInputForm && assistantIn
     assistantChoices.hidden = false;
     [
       ["Électricité", "Électricité bâtiment"],
+      ["Industrie & automatisme", "Électricité industrielle / automatisme"],
       ["Vidéosurveillance", "Vidéosurveillance"],
       ["Antenne & réception TV", "Antennes paraboliques / réception TV"],
       ["Panneaux solaires", "Panneaux photovoltaïques"],
@@ -400,6 +405,9 @@ function updateConnectionStatus() {
 window.addEventListener("online", updateConnectionStatus);
 window.addEventListener("offline", updateConnectionStatus);
 updateConnectionStatus();
+
+document.documentElement.classList.remove("no-js");
+document.documentElement.classList.add("js-ready");
 
 if ("serviceWorker" in navigator && (window.location.protocol === "https:" || window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")) {
   window.addEventListener("load", () => {

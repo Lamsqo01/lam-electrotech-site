@@ -4,8 +4,9 @@ Site statique en français pour présenter les services de LAM ELECTROTECH et or
 
 ## Pages
 
-- `index.html` : accueil, services, assistant de préparation, conseils, FAQ, devis et contact.
+- `index.html` : accueil, services, sélection de photos réelles d’électricité avec lien vers la galerie complète, assistant de préparation, conseils, FAQ, devis et contact.
 - `electricite.html` : page détaillée de la prestation avec une galerie de vingt-trois photos classées par sujet (cellules, coffrets, commandes, contrôles instrumentés, équipe, cheminements et étapes de chantier) ; les sept premières photos sont dans `realisations/electricite/` et les seize photos ajoutées ensuite sont à la racine du dépôt. Un lien direct dans l’introduction mène à cette série complémentaire. Les photos et valeurs affichées n’établissent pas, à elles seules, l’état ni la conformité d’une installation.
+- `industriel.html` : présentation de demandes en électricité industrielle et automatisme ; les exemples guident l’échange, mais le périmètre de chaque intervention est confirmé après étude.
 - `videosurveillance.html`, `antennes.html`, `solaire.html`, `maintenance.html` : pages détaillées des prestations, avec bénéfices et limites à prendre en compte.
 - `normes-securite.html` : repères de prévention, signaux de danger, erreurs à éviter, précautions par domaine et liens vers les sources officielles béninoises et les référentiels IEC cités. Les liens distinguent l’existence d’un texte de son applicabilité à un projet ; les exigences réglementaires doivent être confirmées auprès des organismes compétents au Bénin.
 - `depannage.html` : parcours séparé de signalement d’une panne.
@@ -14,6 +15,7 @@ Site statique en français pour présenter les services de LAM ELECTROTECH et or
 - `offline.html` : page de repli en cas de navigation hors connexion.
 - `404.html` : page d’erreur à configurer comme page 404 auprès de l’hébergeur.
 - `robots.txt` : autorise l’indexation des pages publiques et exclut la page hors connexion.
+- `sitemap.xml` : sitemap des pages publiques sur l’URL GitHub Pages actuellement utilisée ; à adapter si un domaine personnalisé est configuré.
 
 ## Prévisualisation et publication
 
@@ -21,11 +23,11 @@ Les fichiers peuvent être prévisualisés directement depuis `index.html`. Pour
 
 Sur téléphone et tablette, la navigation s’ouvre dans un panneau avec fond atténué ; elle peut être fermée avec Échap, en touchant à l’extérieur ou en choisissant un lien.
 
-Publier ensemble les pages HTML, `styles.css`, `script.js`, `manifest.webmanifest`, `service-worker.js`, l’image source `logo.jpeg`, ses versions optimisées `logo-horizontal.png` et `logo-icon.png`, les photos présentes dans `realisations/electricite/` et les seize photos complémentaires à la racine, `contact.vcf` et `robots.txt`. Configurer également `404.html` comme page d’erreur chez l’hébergeur. Le service worker précharge les pages et ressources locales, y compris les photos du portfolio, privilégie la version réseau pour les navigations en ligne et propose une page de repli lorsque le réseau est absent. Les contours des cartes et panneaux utilisent des rayons discrets et cohérents pour adoucir la présentation sans altérer la lisibilité technique.
+Publier ensemble les pages HTML, `styles.css`, `script.js`, `manifest.webmanifest`, `service-worker.js`, l’image source `logo.jpeg`, ses versions optimisées `logo-horizontal.png` et `logo-icon.png`, les photos présentes dans `realisations/electricite/` et les seize photos complémentaires à la racine, `contact.vcf`, `robots.txt` et `sitemap.xml`. Configurer également `404.html` comme page d’erreur chez l’hébergeur. Le service worker précharge les pages et ressources locales, y compris les photos du portfolio, privilégie la version réseau pour les navigations en ligne et propose une page de repli lorsque le réseau est absent. Les contours des cartes et panneaux utilisent des rayons discrets et cohérents pour adoucir la présentation sans altérer la lisibilité technique.
 
 ## Parcours de contact
 
-Les formulaires ne transmettent pas les réponses à un serveur. Ils préparent un message contextualisé dans WhatsApp ; la personne peut le vérifier, le modifier, joindre des photos dans la conversation et l’envoyer elle-même. Les boutons d’appel utilisent directement les deux numéros communiqués par l’entreprise.
+Les formulaires ne transmettent pas les réponses à un serveur. Ils préparent un message contextualisé dans WhatsApp ; la personne peut le vérifier, le modifier, joindre des photos dans la conversation et l’envoyer elle-même. Le nom, le téléphone et la commune sont facultatifs. Sans JavaScript, des liens directs d’appel et WhatsApp restent disponibles. Les boutons d’appel utilisent directement les deux numéros communiqués par l’entreprise.
 
 L’assistant de préparation est guidé par des choix et des questions définis sur le site. Il ne s’agit pas d’un modèle d’IA générative, d’un diagnostic à distance ou d’un système de prise de rendez-vous.
 
@@ -48,5 +50,7 @@ L’assistant de préparation est guidé par des choix et des questions définis
 - Ajouter les photos des autres services uniquement après examen du contenu, vérification des droits de publication et rédaction de légendes conformes aux détails réellement visibles.
 - Compléter l’identification de l’éditeur et de l’hébergeur dans `mentions-legales.html` avec les informations exactes de l’entreprise.
 - Choisir le domaine et configurer son DNS, HTTPS, l’URL canonique, l’image de partage social, un sitemap adapté au domaine et la propriété du site dans les outils de référencement.
+- Les URL canoniques et le sitemap actuels utilisent l’adresse GitHub Pages ; les remplacer ensemble si un domaine personnalisé devient actif.
+- Ajouter des études de cas, photos d’autres services, avis clients, présentation nominative et formations uniquement après confirmation des informations, des autorisations et des droits de publication.
 - Configurer les réponses d’hébergement pour les types de fichiers statiques et la page `404.html`.
 - Mettre à jour la politique de confidentialité si un backend, des fichiers téléversés, des statistiques ou d’autres services tiers sont ajoutés.

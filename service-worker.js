@@ -1,9 +1,10 @@
-const CACHE_NAME = "lam-electrotech-static-v20";
+const CACHE_NAME = "lam-electrotech-static-v22";
 const APP_FILES = [
   "./",
   "./index.html",
   "./depannage.html",
   "./electricite.html",
+  "./industriel.html",
   "./videosurveillance.html",
   "./antennes.html",
   "./solaire.html",
@@ -11,6 +12,7 @@ const APP_FILES = [
   "./normes-securite.html",
   "./mentions-legales.html",
   "./politique-confidentialite.html",
+  "./sitemap.xml",
   "./offline.html",
   "./404.html",
   "./realisations/electricite/cellule-electrique-technicien.jpg",
@@ -37,7 +39,7 @@ const APP_FILES = [
   "./gaines-electriques-en-attente-dans-la-piece-vue-02.jpg",
   "./disjoncteur-schneider-et-cables-de-puissance.jpg",
   "./contact.vcf",
-  "./styles.css?v=19",
+  "./styles.css?v=20",
   "./script.js",
   "./favicon.svg",
   "./logo-horizontal.png",

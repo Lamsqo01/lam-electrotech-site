@@ -4,7 +4,7 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101b2d"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="description" content="Signalez une panne électrique, une caméra en panne ou un problème de réception à LAM ELECTROTECH, partout au Bénin.">
   <title>Dépannage électrique et technique au Bénin | LAM ELECTROTECH</title>
-  <link rel="icon" type="image/png" sizes="512x512" href="logo-icon.png"><link rel="apple-touch-icon" href="logo-icon.png"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css?v=19"><script src="script.js" defer></script>
+  <link rel="canonical" href="https://lamsqo01.github.io/lam-electrotech-site/depannage.html"><link rel="icon" type="image/png" sizes="512x512" href="logo-icon.png"><link rel="apple-touch-icon" href="logo-icon.png"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css?v=20"><script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -15,7 +15,7 @@
       <div class="repair-warning"><span class="warning-symbol">!</span><div><b>Fumée, odeur de brûlé, étincelles ou échauffement important ?</b><p>Éloignez-vous et ne manipulez pas l’installation. Coupez l’alimentation uniquement si vous pouvez le faire sans danger, puis contactez un professionnel. Ne démontez pas un tableau et ne touchez pas aux fils.</p></div></div>
       <div class="repair-form-wrap repair-page-form" id="repair-form-section">
         <div class="repair-form-heading"><span class="panel-kicker">VOTRE SIGNALEMENT</span><p>Quelques informations aident à orienter le premier échange. N’ajoutez pas de mot de passe, code ou information bancaire.</p></div>
-        <noscript><p class="no-script-notice">Pour préparer le signalement automatiquement, activez JavaScript. En cas de panne, appelez-nous ou contactez-nous sur WhatsApp.</p></noscript>
+        <p class="js-fallback no-script-notice">Le formulaire nécessite JavaScript. En cas de panne, <a href="tel:+2290196666193">appelez le +229 01 96 66 61 93</a> ou <a href="https://wa.me/2290196666193" target="_blank" rel="noopener noreferrer">contactez-nous directement sur WhatsApp</a>.</p>
         <form class="repair-form" id="repair-form">
           <label>Nature du problème
             <select name="problem" required>
@@ -23,6 +23,8 @@
               <option>Problème électrique</option><option>Disjoncteur qui déclenche</option><option>Éclairage défaillant</option><option>Prise sans courant</option><option>Installation qui chauffe</option><option>Caméra ou vidéosurveillance</option><option>Antenne ou réception TV</option><option>Autre problème technique</option>
             </select>
           </label>
+          <label>Votre nom <span>(facultatif)</span><input name="name" type="text" autocomplete="name" maxlength="120" placeholder="Comment vous appeler ?"></label>
+          <label>Votre téléphone <span>(facultatif)</span><input name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="Pour être rappelé si besoin"></label>
           <label>Commune <span>(facultatif)</span><input name="location" type="text" autocomplete="address-level2" maxlength="100" placeholder="Ex. : Cotonou"></label>
           <label>Que se passe-t-il ?
             <textarea name="message" rows="4" required minlength="5" maxlength="500" placeholder="Décrivez les symptômes observés, sans ouvrir l’installation…"></textarea>
